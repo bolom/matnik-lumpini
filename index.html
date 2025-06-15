@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiger Boxing - Muay Thai Academy</title>
+    <title>Matnik Lumpini - Club de Boxe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         }
 
         :root {
-            --yellow: #fbbf24;
+            --red: #dc2626;
             --black: #0a0a0a;
             --gray: #171717;
             --light-gray: #a3a3a3;
@@ -35,7 +35,6 @@
             overflow-x: hidden;
         }
 
-        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -45,7 +44,7 @@
             backdrop-filter: blur(20px);
             z-index: 100;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(251, 191, 36, 0.1);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.1);
         }
 
         .container {
@@ -69,8 +68,8 @@
         }
 
         .logo img {
-            width: 36px;
-            height: 36px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
 
@@ -93,10 +92,9 @@
         }
 
         .nav a:hover {
-            color: var(--yellow);
+            color: var(--red);
         }
 
-        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -121,7 +119,7 @@
         }
 
         .hero-text .highlight {
-            color: var(--yellow);
+            color: var(--red);
         }
 
         .hero-text p {
@@ -133,8 +131,8 @@
 
         .cta-btn {
             background: transparent;
-            border: 2px solid var(--yellow);
-            color: var(--yellow);
+            border: 2px solid var(--red);
+            color: var(--red);
             padding: 1rem 2rem;
             font-size: 1rem;
             font-weight: 600;
@@ -146,8 +144,8 @@
         }
 
         .cta-btn:hover {
-            background: var(--yellow);
-            color: var(--black);
+            background: var(--red);
+            color: var(--white);
             transform: translateY(-2px);
         }
 
@@ -158,10 +156,10 @@
             position: relative;
         }
 
-        .tiger-circle {
+        .boxing-circle {
             width: 320px;
             height: 320px;
-            background: linear-gradient(135deg, var(--yellow), #f59e0b);
+            background: linear-gradient(135deg, var(--red), #991b1b);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -170,7 +168,7 @@
             animation: float 6s ease-in-out infinite;
         }
 
-        .tiger-circle::before {
+        .boxing-circle::before {
             content: '';
             position: absolute;
             width: 100%;
@@ -182,7 +180,7 @@
             z-index: -1;
         }
 
-        .tiger-emoji {
+        .boxing-emoji {
             font-size: 120px;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
         }
@@ -192,22 +190,29 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* Services */
         .services {
             padding: 6rem 0;
             background: var(--gray);
         }
 
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 3rem;
+            letter-spacing: -0.03em;
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .service-card {
             background: var(--black);
-            border: 1px solid rgba(251, 191, 36, 0.2);
+            border: 1px solid rgba(220, 38, 38, 0.2);
             padding: 2rem 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
@@ -215,42 +220,39 @@
         }
 
         .service-card:hover {
-            border-color: var(--yellow);
+            border-color: var(--red);
             transform: translateY(-5px);
-            background: rgba(251, 191, 36, 0.05);
+            background: rgba(220, 38, 38, 0.05);
         }
 
         .service-icon {
-            font-size: 2rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
         }
 
         .service-title {
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 1.1rem;
             color: var(--white);
+            margin-bottom: 0.5rem;
         }
 
-        /* Stats */
+        .service-description {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
         .stats {
             padding: 6rem 0;
             text-align: center;
-        }
-
-        .stats h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 4rem;
-            letter-spacing: -0.03em;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
 
         .stat-item {
@@ -260,7 +262,7 @@
         .stat-number {
             font-size: 3.5rem;
             font-weight: 900;
-            color: var(--yellow);
+            color: var(--red);
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -273,68 +275,75 @@
             letter-spacing: 0.05em;
         }
 
-        /* Footer */
         .footer {
             background: var(--gray);
-            padding: 3rem 0;
-            border-top: 1px solid rgba(251, 191, 36, 0.1);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h3 {
-            color: var(--yellow);
-            margin-bottom: 1rem;
+            color: var(--red);
+            margin-bottom: 1.5rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
+        .footer-section p,
         .footer-section a {
             color: var(--light-gray);
             text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             transition: color 0.2s;
+            line-height: 1.6;
         }
 
         .footer-section a:hover {
-            color: var(--yellow);
+            color: var(--red);
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
             gap: 1rem;
             margin-top: 1rem;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: var(--black);
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            border: 1px solid rgba(220, 38, 38, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--light-gray);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
 
         .social-link:hover {
-            background: var(--yellow);
-            color: var(--black);
-            border-color: var(--yellow);
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
         }
 
-        /* Mobile */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(220, 38, 38, 0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .nav {
                 display: none;
@@ -346,12 +355,12 @@
                 gap: 3rem;
             }
 
-            .tiger-circle {
+            .boxing-circle {
                 width: 250px;
                 height: 250px;
             }
 
-            .tiger-emoji {
+            .boxing-emoji {
                 font-size: 90px;
             }
 
@@ -361,6 +370,11 @@
 
             .container {
                 padding: 0 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
 
@@ -376,12 +390,12 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="img/logo.png" alt="Tiger Boxing">
-                    <span class="logo-text">TIGER BOXING</span>
+                    <img src="img/logo.png" alt="Matnik Lumpini">
+                    <span class="logo-text">MATNIK LUMPINI</span>
                 </a>
                 <nav class="nav">
-                    <a href="#services">Training</a>
-                    <a href="#about">About</a>
+                    <a href="#services">Entraînement</a>
+                    <a href="#about">À propos</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>
@@ -394,15 +408,15 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>
-                            MUAY THAI<br>
-                            <span class="highlight">ACADEMY</span>
+                            CLUB DE<br>
+                            <span class="highlight">BOXE</span>
                         </h1>
-                        <p>Master the art of eight limbs with authentic Thai boxing techniques</p>
-                        <a href="#contact" class="cta-btn">Start Training</a>
+                        <p>Rejoignez-nous pour apprendre les techniques de boxe dans une ambiance conviviale</p>
+                        <a href="#contact" class="cta-btn">Commencer</a>
                     </div>
                     <div class="hero-visual">
-                        <div class="tiger-circle">
-                            <span class="tiger-emoji">🐅</span>
+                        <div class="boxing-circle">
+                            <span class="boxing-emoji">🥊</span>
                         </div>
                     </div>
                 </div>
@@ -411,30 +425,27 @@
 
         <section class="services" id="services">
             <div class="container">
+                <h2 class="section-title">NOS <span class="highlight">SERVICES</span></h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <span class="service-icon">👩</span>
-                        <h3 class="service-title">Women</h3>
+                        <h3 class="service-title">Femmes</h3>
+                        <p class="service-description">Cours adaptés pour femmes</p>
                     </div>
                     <div class="service-card">
                         <span class="service-icon">👨</span>
-                        <h3 class="service-title">Men</h3>
+                        <h3 class="service-title">Hommes</h3>
+                        <p class="service-description">Entraînement pour hommes</p>
                     </div>
                     <div class="service-card">
                         <span class="service-icon">🧒</span>
-                        <h3 class="service-title">Kids</h3>
+                        <h3 class="service-title">Enfants</h3>
+                        <p class="service-description">Initiation pour les jeunes</p>
                     </div>
                     <div class="service-card">
                         <span class="service-icon">👤</span>
-                        <h3 class="service-title">Personal</h3>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-icon">👥</span>
-                        <h3 class="service-title">Group</h3>
-                    </div>
-                    <div class="service-card">
-                        <span class="service-icon">🏋️</span>
-                        <h3 class="service-title">Fitness</h3>
+                        <h3 class="service-title">Personnel</h3>
+                        <p class="service-description">Cours particuliers</p>
                     </div>
                 </div>
             </div>
@@ -442,22 +453,22 @@
 
         <section class="stats" id="about">
             <div class="container">
-                <h2>
-                    TRAIN LIKE A <span class="highlight">CHAMPION</span>
+                <h2 class="section-title">
+                    ENTRAÎNEZ-VOUS COMME UN <span class="highlight">CHAMPION</span>
                 </h2>
                 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Fighters Trained</span>
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Années d'expérience</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">10</span>
-                        <span class="stat-label">Years Experience</span>
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Boxeurs entraînés</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label">Dedication</span>
+                        <span class="stat-label">Passion</span>
                     </div>
                 </div>
             </div>
@@ -469,17 +480,27 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <a href="mailto:info@tigerboxing.com">info@tigerboxing.com</a>
-                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    <p>📍 17 route Balata<br>97200 Fort de France<br>Martinique</p>
+                    <a href="http://matnik-lumpini.club/" target="_blank">🌐 matnik-lumpini.club</a>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Follow</h3>
+                    <h3>Suivez-nous</h3>
                     <div class="social-links">
-                        <a href="#" class="social-link">📷</a>
-                        <a href="#" class="social-link">📘</a>
+                        <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" class="social-link" title="Instagram">📷</a>
                     </div>
                 </div>
+
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Lundi - Vendredi: 18h - 21h<br>
+                       Samedi: 10h - 12h<br>
+                       Dimanche: Fermé</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Matnik Lumpini - Club de Boxe. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
