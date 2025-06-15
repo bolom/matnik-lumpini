@@ -42,20 +42,20 @@
         background: var(--bg-primary);
         color: var(--text-primary);
         font-family: 'Inter', sans-serif;
-        line-height: 1.6;
+        line-height: 1.5;
         overflow-x: hidden;
       }
 
       .container {
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding: 0 20px;
       }
 
-      /* Header */
+      /* Header - Reduced padding */
       .header {
         position: relative;
-        padding: 80px 0 120px;
+        padding: 40px 0 60px;
         background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         overflow: hidden;
       }
@@ -75,7 +75,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
         position: relative;
         z-index: 10;
       }
@@ -83,22 +83,22 @@
       .logo-container {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
       }
 
       .logo {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
         border: 2px solid var(--accent-yellow);
         background: var(--bg-card);
         object-fit: contain;
-        padding: 8px;
+        padding: 6px;
       }
 
       .brand-text {
         font-family: 'Playfair Display', serif;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
         color: var(--accent-yellow);
         text-transform: uppercase;
@@ -107,7 +107,7 @@
 
       .nav-links {
         display: flex;
-        gap: 32px;
+        gap: 24px;
         list-style: none;
       }
 
@@ -115,7 +115,7 @@
         color: var(--text-secondary);
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         transition: color 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -125,7 +125,7 @@
         color: var(--accent-yellow);
       }
 
-      /* Hero Section */
+      /* Hero Section - Reduced spacing */
       .hero {
         text-align: center;
         position: relative;
@@ -135,28 +135,28 @@
       .hero-badge {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         background: rgba(245, 158, 11, 0.1);
         border: 1px solid rgba(245, 158, 11, 0.2);
-        padding: 8px 16px;
+        padding: 6px 14px;
         border-radius: 50px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 500;
         color: var(--accent-yellow);
-        margin-bottom: 32px;
+        margin-bottom: 24px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
 
       .hero-title {
         font-family: 'Playfair Display', serif;
-        font-size: clamp(3rem, 8vw, 6rem);
+        font-size: clamp(2.5rem, 7vw, 5rem);
         font-weight: 900;
         color: var(--text-primary);
         line-height: 1.1;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         text-transform: uppercase;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
       }
 
       .hero-title .accent {
@@ -165,25 +165,25 @@
       }
 
       .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         color: var(--text-secondary);
-        max-width: 600px;
-        margin: 0 auto 40px;
+        max-width: 550px;
+        margin: 0 auto 30px;
         font-weight: 400;
-        line-height: 1.6;
+        line-height: 1.5;
       }
 
       .cta-button {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         background: var(--accent-yellow);
         color: var(--bg-primary);
-        padding: 16px 32px;
+        padding: 14px 28px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.95rem;
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -195,9 +195,9 @@
         box-shadow: 0 12px 40px rgba(245, 158, 11, 0.3);
       }
 
-      /* Main Content */
+      /* Main Content - Reduced padding */
       .main-content {
-        padding: 120px 0;
+        padding: 60px 0;
         background: var(--bg-secondary);
         position: relative;
       }
@@ -205,23 +205,23 @@
       .section-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
+        gap: 30px;
+        margin-bottom: 40px;
       }
 
       .section-card {
         background: var(--bg-card);
         border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 48px;
+        border-radius: 16px;
+        padding: 32px;
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
       }
 
       .section-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
         border-color: rgba(245, 158, 11, 0.3);
       }
 
@@ -231,22 +231,22 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
+        height: 3px;
         background: linear-gradient(90deg, var(--accent-yellow), var(--accent-gold));
       }
 
       .card-header {
         display: flex;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 32px;
+        gap: 14px;
+        margin-bottom: 24px;
       }
 
       .card-icon {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         background: rgba(245, 158, 11, 0.1);
-        border-radius: 12px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -255,7 +255,7 @@
 
       .card-title {
         font-family: 'Playfair Display', serif;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: var(--text-primary);
         text-transform: uppercase;
@@ -266,16 +266,16 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 16px;
       }
 
       .schedule-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 16px;
         background: rgba(255, 255, 255, 0.02);
-        border-radius: 12px;
+        border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 0.3s ease;
       }
@@ -288,52 +288,53 @@
       .schedule-day {
         font-weight: 600;
         color: var(--text-primary);
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       .schedule-time {
         font-weight: 700;
         color: var(--accent-yellow);
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .schedule-group {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: var(--text-secondary);
         font-style: italic;
       }
 
       .address-content {
-        line-height: 1.8;
+        line-height: 1.6;
         color: var(--text-secondary);
       }
 
       .address-content strong {
         color: var(--text-primary);
         display: block;
-        margin-bottom: 12px;
-        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-size: 1rem;
       }
 
       .map-link {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         color: var(--accent-yellow);
         text-decoration: none;
         font-weight: 500;
-        margin-top: 20px;
+        margin-top: 16px;
         transition: color 0.3s ease;
+        font-size: 0.9rem;
       }
 
       .map-link:hover {
         color: var(--accent-gold);
       }
 
-      /* Footer */
+      /* Footer - Reduced padding */
       .footer {
         background: var(--bg-primary);
-        padding: 60px 0;
+        padding: 40px 0;
         text-align: center;
         border-top: 1px solid var(--border);
       }
@@ -342,16 +343,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
+        gap: 20px;
       }
 
       .social-link {
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
         background: rgba(245, 158, 11, 0.1);
         border: 1px solid rgba(245, 158, 11, 0.2);
-        padding: 12px 24px;
+        padding: 10px 20px;
         border-radius: 50px;
         color: var(--accent-yellow);
         text-decoration: none;
@@ -359,7 +360,7 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       .social-link:hover {
@@ -369,14 +370,14 @@
 
       .copyright {
         color: var(--text-muted);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       /* Animations */
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(20px);
         }
         to {
           opacity: 1;
@@ -385,18 +386,18 @@
       }
 
       .animate-fade-in {
-        animation: fadeInUp 0.8s ease-out forwards;
+        animation: fadeInUp 0.6s ease-out forwards;
       }
 
-      .animate-delay-1 { animation-delay: 0.2s; }
-      .animate-delay-2 { animation-delay: 0.4s; }
-      .animate-delay-3 { animation-delay: 0.6s; }
+      .animate-delay-1 { animation-delay: 0.1s; }
+      .animate-delay-2 { animation-delay: 0.2s; }
+      .animate-delay-3 { animation-delay: 0.3s; }
 
       /* Responsive */
       @media (max-width: 1024px) {
         .section-grid {
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: 24px;
         }
 
         .nav-links {
@@ -410,25 +411,29 @@
         }
 
         .header {
-          padding: 40px 0 80px;
+          padding: 24px 0 40px;
         }
 
         .nav {
-          margin-bottom: 60px;
+          margin-bottom: 32px;
         }
 
         .section-card {
-          padding: 32px 24px;
+          padding: 24px 20px;
         }
 
         .main-content {
-          padding: 80px 0;
+          padding: 40px 0;
         }
 
         .schedule-item {
           flex-direction: column;
           align-items: flex-start;
-          gap: 8px;
+          gap: 6px;
+        }
+
+        .footer {
+          padding: 32px 0;
         }
       }
 
