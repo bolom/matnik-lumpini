@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matnik Lumpini - Club de Muay Thaï – Martinique</title>
@@ -14,9 +14,283 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <style>
+      :root {
+        --background: #f8fafc;
+        --foreground: #181818;
+        --green-dark: #037a49;
+        --green-accent: #25B585;
+        --green-light: #e6f2eb;
+        --card-bg: #ffffff;
+        --border-color: rgba(3, 122, 73, 0.2);
+        --shadow-color: rgba(61, 91, 52, 0.1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: 'Inter', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 40px 0 10px;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin: 0 auto 10px;
+        background: rgba(255,255,255,0.94);
+        border-radius: 50%;
+        border: 2px solid var(--green-dark);
+        box-shadow: 0 0 15px rgba(37, 181, 133, 0.3);
+      }
+
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--green-dark);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin: 0;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+        margin-bottom: 20px;
+      }
+
+      main {
+        padding: 20px 0;
+      }
+
+      .hero h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--green-dark);
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+
+      .hero h2 span {
+        color: var(--green-accent);
+      }
+
+      .section-bar {
+        width: 64px;
+        height: 5px;
+        border-radius: 3px;
+        background-color: var(--green-dark);
+        margin: 15px auto;
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
+        opacity: 0.85;
+      }
+
+      .button-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1rem;
+        background-color: var(--green-dark);
+        color: white;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border: none;
+        cursor: pointer;
+      }
+
+      .button-cta:hover {
+        background-color: var(--green-accent);
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(37, 181, 133, 0.4);
+      }
+
+      .club-info {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 50px auto;
+        max-width: 600px;
+        box-shadow: 0 4px 32px 0 var(--shadow-color);
+      }
+
+      .club-info h3 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--green-dark);
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      .schedule {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+      }
+
+      .schedule li {
+        margin-bottom: 15px;
+      }
+      
+      .schedule .day {
+        font-weight: 600;
+      }
+      
+      .schedule .time {
+        font-weight: bold;
+        color: var(--green-dark);
+      }
+      
+      .schedule .group {
+        font-style: italic;
+        opacity: 0.8;
+      }
+      
+      .address {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      
+      .address a {
+        display: inline-block;
+        margin-top: 15px;
+        color: var(--green-dark);
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+
+      .address a:hover {
+        color: var(--green-accent);
+      }
+
+      footer {
+        padding: 30px 0;
+        font-size: 0.9rem;
+        color: #666;
+        opacity: 0.9;
+      }
+      
+      footer .social-link {
+        font-weight: 600;
+        color: var(--green-dark);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      
+      footer .social-link:hover {
+        color: var(--green-accent);
+        text-decoration: underline;
+      }
+      
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 3.5rem;
+        }
+        .hero h2 {
+          font-size: 2.8rem;
+        }
+        .schedule li {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/lovable-uploads/b5bf8e78-d929-4c1b-8735-019045a4fe6f.png" alt="Matnik Lumpini Tiger Logo" class="logo" />
+            <h1>Matnik Lumpini</h1>
+            <p>Club de Muay Thaï – Martinique</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>
+                    ENTÎMN RÉZISTANS <br />
+                    <span>PUISSANCE TRADITION</span>
+                </h2>
+                <div class="section-bar"></div>
+                <p>
+                    Découvrez l'art du Muay Thai dans une ambiance martiniquaise conviviale et exigeante.
+                    Encadrement passionné, respect des traditions, esprit de famille et performance.
+                </p>
+                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="button-cta">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Suivez-nous sur Instagram
+                </a>
+            </section>
+
+            <section class="club-info">
+                <h3>Horaires & Lieu</h3>
+                <ul class="schedule">
+                    <li>
+                        <span class="day">Lundi &amp; Jeudi :</span>
+                        <span class="time">19h — 21h</span>
+                        <span class="group">Adultes &amp; Ados</span>
+                    </li>
+                    <li>
+                        <span class="day">Samedi :</span>
+                        <span class="time">10h — 12h</span>
+                        <span class="group">Enfants (à partir de 7 ans)</span>
+                    </li>
+                </ul>
+                <div class="address">
+                    <strong>Adresse :</strong><br />
+                    17 route de Balata,<br />
+                    97200 Fort-de-France, Martinique<br />
+                    <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener">
+                        Voir sur Google Maps
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2025 <strong style="color: var(--green-dark);">Matnik Lumpini</strong> — Tous droits réservés
+            <br>
+            <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="social-link">
+                @matnik_lumpini
+            </a>
+        </footer>
+    </div>
+    <script>
+      // This page is intentionally simple and does not require JavaScript.
+    </script>
+</body>
 </html>
