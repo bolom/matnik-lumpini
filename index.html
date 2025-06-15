@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,14 +15,14 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <style>
       :root {
-        --background: #f8fafc;
-        --foreground: #181818;
-        --green-dark: #037a49;
-        --green-accent: #25B585;
-        --green-light: #e6f2eb;
-        --card-bg: #ffffff;
-        --border-color: rgba(3, 122, 73, 0.2);
-        --shadow-color: rgba(61, 91, 52, 0.1);
+        --background: #18181b; /* Dark background */
+        --foreground: #f8fafc; /* Light text */
+        --green-dark: #facc15; /* Primary Yellow */
+        --green-accent: #eab308; /* Hover Yellow */
+        --green-light: #3f3f46;
+        --card-bg: #27272a; /* Dark card background */
+        --border-color: rgba(250, 204, 21, 0.2); /* Yellowish border */
+        --shadow-color: rgba(250, 204, 21, 0.1); /* Yellowish shadow */
       }
 
       html {
@@ -55,10 +54,10 @@
         height: 100px;
         object-fit: contain;
         margin: 0 auto 10px;
-        background: rgba(255,255,255,0.94);
+        background: var(--card-bg);
         border-radius: 50%;
         border: 2px solid var(--green-dark);
-        box-shadow: 0 0 15px rgba(37, 181, 133, 0.3);
+        box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
       }
 
       h1 {
@@ -122,7 +121,7 @@
         font-weight: bold;
         font-size: 1rem;
         background-color: var(--green-dark);
-        color: white;
+        color: black;
         text-decoration: none;
         transition: all 0.2s ease-in-out;
         border: none;
@@ -132,7 +131,7 @@
       .button-cta:hover {
         background-color: var(--green-accent);
         transform: scale(1.05);
-        box-shadow: 0 4px 20px rgba(37, 181, 133, 0.4);
+        box-shadow: 0 4px 20px rgba(250, 204, 21, 0.4);
       }
 
       .club-info {
@@ -199,8 +198,8 @@
       footer {
         padding: 30px 0;
         font-size: 0.9rem;
-        color: #666;
-        opacity: 0.9;
+        color: var(--foreground);
+        opacity: 0.7;
       }
       
       footer .social-link {
