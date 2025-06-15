@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matnik Lumpini - Club de Muay Thaï – Martinique</title>
-    <meta name="description" content="Découvrez l'art du Muay Thai à Matnik Lumpini : tradition, énergie, respect et puissance à Fort-de-France, Martinique.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap">
-    <meta property="og:title" content="Matnik Lumpini Muay Thaï" />
-    <meta property="og:description" content="Club de Muay Thaï – Martinique. Tradition, énergie, respect et puissance." />
+    <title>Matnik Lumpini - Club de Boxe – Martinique</title>
+    <meta name="description" content="Découvrez l'art de la boxe à Matnik Lumpini : tradition, énergie, respect et puissance à Fort-de-France, Martinique.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap">
+    <meta property="og:title" content="Matnik Lumpini Club de Boxe" />
+    <meta property="og:description" content="Club de Boxe – Martinique. Tradition, énergie, respect et puissance." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -15,20 +16,48 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <style>
       :root {
-        --background: #18181b; /* Dark background */
-        --foreground: #f8fafc; /* Light text */
-        --green-dark: #facc15; /* Primary Yellow */
-        --green-accent: #eab308; /* Hover Yellow */
-        --green-light: #3f3f46;
-        --card-bg: #27272a; /* Dark card background */
-        --border-color: rgba(250, 204, 21, 0.2); /* Yellowish border */
-        --shadow-color: rgba(250, 204, 21, 0.1); /* Yellowish shadow */
+        --background: #0a0a0b;
+        --foreground: #fafafa;
+        --accent: #facc15;
+        --accent-hover: #eab308;
+        --card-bg: #1a1a1d;
+        --border-color: rgba(250, 204, 21, 0.15);
+        --shadow-color: rgba(250, 204, 21, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+        letter-spacing: -0.01em;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
       }
 
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(20px);
+          transform: translateY(30px);
         }
         to {
           opacity: 1;
@@ -36,312 +65,359 @@
         }
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: var(--background);
-        color: var(--foreground);
-        font-family: 'Inter', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        text-align: center;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
       header {
-        padding: 40px 0 10px;
-        animation: fadeInUp 0.5s ease-out forwards;
-        opacity: 0;
+        padding: 4rem 0 2rem;
+        text-align: center;
+        animation: fadeInUp 0.8s ease-out;
       }
 
       .logo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         object-fit: contain;
-        margin: 0 auto 10px;
+        margin: 0 auto 2.5rem;
         background: var(--card-bg);
         border-radius: 50%;
-        border: 2px solid var(--green-dark);
-        box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+        border: 3px solid var(--accent);
+        box-shadow: 0 0 40px rgba(250, 204, 21, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 60px rgba(250, 204, 21, 0.3);
       }
 
       h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--green-dark);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--accent);
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin: 0;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        line-height: 1.1;
       }
 
-      header p {
-        font-size: 1.1rem;
-        font-weight: 600;
+      .subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-weight: 400;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        opacity: 0.9;
-        margin-bottom: 20px;
+        letter-spacing: 0.15em;
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      .location {
+        font-size: 0.95rem;
+        font-weight: 300;
+        opacity: 0.6;
+        letter-spacing: 0.05em;
       }
 
       main {
-        padding: 20px 0;
+        padding: 3rem 0;
       }
 
       .hero {
-        animation: fadeInUp 0.5s 0.2s ease-out forwards;
-        opacity: 0;
+        text-align: center;
+        margin-bottom: 5rem;
+        animation: fadeInUp 0.8s 0.2s ease-out both;
       }
 
       .hero h2 {
         font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--green-dark);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 600;
+        color: var(--accent);
         line-height: 1.3;
-        margin-bottom: 8px;
+        margin-bottom: 2rem;
+        letter-spacing: 0.02em;
       }
 
-      .hero h2 span {
-        color: var(--green-accent);
-      }
-
-      .section-bar {
-        width: 64px;
-        height: 5px;
-        border-radius: 3px;
-        background-color: var(--green-dark);
-        margin: 15px auto;
-      }
-
-      .hero p {
-        max-width: 600px;
-        margin: 0 auto 30px;
-        font-size: 1.1rem;
+      .hero-description {
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        font-weight: 300;
         opacity: 0.85;
+        line-height: 1.8;
       }
 
-      .button-cta {
+      .cta-button {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 28px;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
         border-radius: 50px;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 1rem;
-        background-color: var(--green-dark);
-        color: black;
+        background-color: var(--accent);
+        color: var(--background);
         text-decoration: none;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         border: none;
         cursor: pointer;
+        letter-spacing: 0.02em;
       }
 
-      .button-cta:hover {
-        background-color: var(--green-accent);
-        transform: scale(1.05);
-        box-shadow: 0 4px 20px rgba(250, 204, 21, 0.4);
+      .cta-button:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
       }
 
-      .club-info {
+      .info-section {
         background-color: var(--card-bg);
         border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 30px;
-        margin: 50px auto;
-        max-width: 800px;
-        box-shadow: 0 4px 32px 0 var(--shadow-color);
-        text-align: left;
-        animation: fadeInUp 0.5s 0.4s ease-out forwards;
-        opacity: 0;
+        border-radius: 20px;
+        padding: 3rem;
+        margin: 3rem auto;
+        max-width: 900px;
+        box-shadow: 0 8px 32px var(--shadow-color);
+        animation: fadeInUp 0.8s 0.4s ease-out both;
       }
 
-      .club-info-content {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
       }
 
-      .club-info h3 {
+      .info-section h3 {
         font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--green-dark);
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 1.75rem;
+        color: var(--accent);
+        margin-bottom: 2rem;
+        text-align: center;
+        letter-spacing: 0.02em;
       }
 
       .schedule {
         list-style: none;
-        padding: 0;
-        margin: 0;
       }
 
       .schedule li {
-        margin-bottom: 15px;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        gap: 10px;
-      }
-      
-      .schedule .day {
-        font-weight: 600;
-      }
-      
-      .schedule .time {
-        font-weight: bold;
-        color: var(--green-dark);
-      }
-      
-      .schedule .group {
-        font-style: italic;
-        opacity: 0.8;
-      }
-      
-      .address {
+        align-items: center;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         font-size: 1rem;
-        line-height: 1.7;
-      }
-      
-      .address a {
-        display: inline-block;
-        margin-top: 15px;
-        color: var(--green-dark);
-        text-decoration: underline;
-        transition: color 0.2s;
       }
 
-      .address a:hover {
-        color: var(--green-accent);
+      .schedule li:last-child {
+        border-bottom: none;
+      }
+
+      .schedule .day {
+        font-weight: 500;
+        flex: 1;
+      }
+
+      .schedule .time {
+        font-weight: 600;
+        color: var(--accent);
+        font-family: 'Inter', monospace;
+        margin: 0 1rem;
+      }
+
+      .schedule .group {
+        font-style: italic;
+        opacity: 0.7;
+        font-size: 0.9rem;
+        text-align: right;
+        flex: 1;
+      }
+
+      .address-section {
+        text-align: center;
+      }
+
+      .address-section h4 {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .address {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .map-link {
+        display: inline-block;
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: all 0.2s ease;
+        font-weight: 400;
+      }
+
+      .map-link:hover {
+        color: var(--accent-hover);
+        text-decoration-thickness: 2px;
       }
 
       footer {
-        padding: 30px 0;
+        padding: 4rem 0 2rem;
+        text-align: center;
         font-size: 0.9rem;
         color: var(--foreground);
-        opacity: 0.7;
-        animation: fadeInUp 0.5s 0.6s ease-out forwards;
-        opacity: 0;
+        opacity: 0.6;
+        animation: fadeInUp 0.8s 0.6s ease-out both;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 3rem;
       }
-      
-      footer .social-link {
-        font-weight: 600;
-        color: var(--green-dark);
+
+      .social-link {
+        font-weight: 500;
+        color: var(--accent);
         text-decoration: none;
-        transition: color 0.2s;
+        transition: all 0.2s ease;
+        margin-top: 0.5rem;
+        display: inline-block;
       }
-      
-      footer .social-link:hover {
-        color: var(--green-accent);
+
+      .social-link:hover {
+        color: var(--accent-hover);
         text-decoration: underline;
+        text-underline-offset: 4px;
       }
-      
+
       @media (min-width: 768px) {
-        h1 {
-          font-size: 3.5rem;
-        }
-        .hero h2 {
-          font-size: 2.8rem;
+        .container {
+          padding: 0 3rem;
         }
 
-        .club-info {
-          padding: 40px;
+        .info-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: start;
         }
 
-        .club-info-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 40px;
-        }
-
-        .club-info-content > * {
-            flex: 1;
+        .info-section h3 {
+          text-align: left;
+          grid-column: 1 / -1;
+          margin-bottom: 3rem;
         }
 
         .schedule li {
-          display: flex;
-          justify-content: space-between;
-          gap: 20px;
-          flex-wrap: nowrap;
+          padding: 1.5rem 0;
+        }
+
+        .address-section {
+          text-align: left;
         }
       }
 
+      @media (min-width: 1024px) {
+        html {
+          font-size: 18px;
+        }
+
+        .container {
+          padding: 0 4rem;
+        }
+
+        header {
+          padding: 5rem 0 3rem;
+        }
+
+        main {
+          padding: 4rem 0;
+        }
+
+        .hero {
+          margin-bottom: 6rem;
+        }
+
+        .info-section {
+          padding: 4rem;
+        }
+      }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="/lovable-uploads/b5bf8e78-d929-4c1b-8735-019045a4fe6f.png" alt="Matnik Lumpini Tiger Logo" class="logo" />
+            <img src="/lovable-uploads/b5bf8e78-d929-4c1b-8735-019045a4fe6f.png" alt="Matnik Lumpini Logo" class="logo" />
             <h1>Matnik Lumpini</h1>
-            <p>Club de Muay Thaï – Martinique</p>
+            <p class="subtitle">Club de Boxe</p>
+            <p class="location">Fort-de-France, Martinique</p>
         </header>
 
         <main>
             <section class="hero">
-                <h2>
-                    ENTÎMN RÉZISTANS <br />
-                    <span>PUISSANCE TRADITION</span>
-                </h2>
-                <div class="section-bar"></div>
-                <p>
-                    Découvrez l'art du Muay Thai dans une ambiance martiniquaise conviviale et exigeante.
-                    Encadrement passionné, respect des traditions, esprit de famille et performance.
+                <h2>Tradition • Discipline • Excellence</h2>
+                <p class="hero-description">
+                    Découvrez l'art de la boxe dans une ambiance martiniquaise authentique. 
+                    Formation technique, respect des traditions et développement personnel au cœur de notre approche.
                 </p>
-                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="button-cta">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                  Suivez-nous sur Instagram
+                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="cta-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Suivez-nous
                 </a>
             </section>
 
-            <section class="club-info">
-                <h3>Horaires & Lieu</h3>
-                <div class="club-info-content">
-                  <ul class="schedule">
-                      <li>
-                          <span class="day">Lundi &amp; Jeudi :</span>
-                          <span class="time">19h — 21h</span>
-                          <span class="group">Adultes &amp; Ados</span>
-                      </li>
-                      <li>
-                          <span class="day">Samedi :</span>
-                          <span class="time">10h — 12h</span>
-                          <span class="group">Enfants (à partir de 7 ans)</span>
-                      </li>
-                  </ul>
-                  <div class="address">
-                      <strong>Adresse :</strong><br />
-                      17 route de Balata,<br />
-                      97200 Fort-de-France, Martinique<br />
-                      <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener">
-                          Voir sur Google Maps
-                      </a>
-                  </div>
+            <section class="info-section">
+                <h3>Horaires & Adresse</h3>
+                <div class="info-grid">
+                    <div class="schedule-section">
+                        <ul class="schedule">
+                            <li>
+                                <span class="day">Lundi</span>
+                                <span class="time">19h — 21h</span>
+                                <span class="group">Tous niveaux</span>
+                            </li>
+                            <li>
+                                <span class="day">Mercredi</span>
+                                <span class="time">19h — 21h</span>
+                                <span class="group">Avancé</span>
+                            </li>
+                            <li>
+                                <span class="day">Jeudi</span>
+                                <span class="time">19h — 21h</span>
+                                <span class="group">Débutants</span>
+                            </li>
+                            <li>
+                                <span class="day">Samedi</span>
+                                <span class="time">10h — 12h</span>
+                                <span class="group">Enfants (7+ ans)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="address-section">
+                        <h4>Notre Lieu</h4>
+                        <div class="address">
+                            17 Route de Balata<br />
+                            97200 Fort-de-France<br />
+                            Martinique
+                        </div>
+                        <a href="http://matnik-lumpini.club/" target="_blank" rel="noopener" class="map-link">
+                            Visitez notre site
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            © 2025 <strong style="color: var(--green-dark);">Matnik Lumpini</strong> — Tous droits réservés
-            <br>
+            <p>© 2025 <strong style="color: var(--accent);">Matnik Lumpini</strong> — Club de Boxe</p>
             <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="social-link">
                 @matnik_lumpini
             </a>
         </footer>
     </div>
-    <script>
-      // This page is intentionally simple and does not require JavaScript.
-    </script>
 </body>
 </html>
