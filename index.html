@@ -25,6 +25,17 @@
         --shadow-color: rgba(250, 204, 21, 0.1); /* Yellowish shadow */
       }
 
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -47,6 +58,8 @@
 
       header {
         padding: 40px 0 10px;
+        animation: fadeInUp 0.5s ease-out forwards;
+        opacity: 0;
       }
 
       .logo {
@@ -81,6 +94,11 @@
 
       main {
         padding: 20px 0;
+      }
+
+      .hero {
+        animation: fadeInUp 0.5s 0.2s ease-out forwards;
+        opacity: 0;
       }
 
       .hero h2 {
@@ -140,8 +158,17 @@
         border-radius: 12px;
         padding: 30px;
         margin: 50px auto;
-        max-width: 600px;
+        max-width: 800px;
         box-shadow: 0 4px 32px 0 var(--shadow-color);
+        text-align: left;
+        animation: fadeInUp 0.5s 0.4s ease-out forwards;
+        opacity: 0;
+      }
+
+      .club-info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
       }
 
       .club-info h3 {
@@ -157,11 +184,15 @@
       .schedule {
         list-style: none;
         padding: 0;
-        margin: 0 0 30px 0;
+        margin: 0;
       }
 
       .schedule li {
         margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
       }
       
       .schedule .day {
@@ -200,6 +231,8 @@
         font-size: 0.9rem;
         color: var(--foreground);
         opacity: 0.7;
+        animation: fadeInUp 0.5s 0.6s ease-out forwards;
+        opacity: 0;
       }
       
       footer .social-link {
@@ -221,10 +254,27 @@
         .hero h2 {
           font-size: 2.8rem;
         }
+
+        .club-info {
+          padding: 40px;
+        }
+
+        .club-info-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .club-info-content > * {
+            flex: 1;
+        }
+
         .schedule li {
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           gap: 20px;
+          flex-wrap: nowrap;
         }
       }
 
@@ -257,25 +307,27 @@
 
             <section class="club-info">
                 <h3>Horaires & Lieu</h3>
-                <ul class="schedule">
-                    <li>
-                        <span class="day">Lundi &amp; Jeudi :</span>
-                        <span class="time">19h — 21h</span>
-                        <span class="group">Adultes &amp; Ados</span>
-                    </li>
-                    <li>
-                        <span class="day">Samedi :</span>
-                        <span class="time">10h — 12h</span>
-                        <span class="group">Enfants (à partir de 7 ans)</span>
-                    </li>
-                </ul>
-                <div class="address">
-                    <strong>Adresse :</strong><br />
-                    17 route de Balata,<br />
-                    97200 Fort-de-France, Martinique<br />
-                    <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener">
-                        Voir sur Google Maps
-                    </a>
+                <div class="club-info-content">
+                  <ul class="schedule">
+                      <li>
+                          <span class="day">Lundi &amp; Jeudi :</span>
+                          <span class="time">19h — 21h</span>
+                          <span class="group">Adultes &amp; Ados</span>
+                      </li>
+                      <li>
+                          <span class="day">Samedi :</span>
+                          <span class="time">10h — 12h</span>
+                          <span class="group">Enfants (à partir de 7 ans)</span>
+                      </li>
+                  </ul>
+                  <div class="address">
+                      <strong>Adresse :</strong><br />
+                      17 route de Balata,<br />
+                      97200 Fort-de-France, Martinique<br />
+                      <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener">
+                          Voir sur Google Maps
+                      </a>
+                  </div>
                 </div>
             </section>
         </main>
