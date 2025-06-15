@@ -54,6 +54,52 @@
         padding: 0 2rem;
       }
 
+      .language-selector {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 1000;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 20px var(--shadow-color);
+        backdrop-filter: blur(10px);
+      }
+
+      .language-selector svg {
+        width: 20px;
+        height: 20px;
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .language-selector select {
+        background: transparent;
+        border: none;
+        color: var(--foreground);
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        outline: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .language-selector select:hover {
+        background: rgba(250, 204, 21, 0.1);
+      }
+
+      .language-selector select option {
+        background: var(--card-bg);
+        color: var(--foreground);
+        padding: 0.5rem;
+      }
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -341,21 +387,45 @@
           padding: 4rem;
         }
       }
+
+      @media (max-width: 768px) {
+        .language-selector {
+          top: 1rem;
+          right: 1rem;
+        }
+      }
     </style>
 </head>
 <body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 8 6 6"></path>
+            <path d="m4 14 6-6 2-3"></path>
+            <path d="M2 5h12"></path>
+            <path d="M7 2h1"></path>
+            <path d="m22 22-5-10-5 10"></path>
+            <path d="M14 18h6"></path>
+        </svg>
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="fr">Français</option>
+            <option value="gcf">Kréol</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
     <div class="container">
         <header>
             <img src="/img/logo.png" alt="Matnik Lumpini Logo" class="logo" />
             <h1>Matnik Lumpini</h1>
-            <p class="subtitle">Club de Boxe</p>
+            <p class="subtitle" data-key="subtitle">Club de Boxe</p>
             <p class="location">Fort-de-France, Martinique</p>
         </header>
 
         <main>
             <section class="hero">
-                <h2>Tradition • Discipline • Excellence</h2>
-                <p class="hero-description">
+                <h2 data-key="hero-title">Tradition • Discipline • Excellence</h2>
+                <p class="hero-description" data-key="hero-description">
                     Découvrez l'art de la boxe dans une ambiance martiniquaise authentique. 
                     Formation technique, respect des traditions et développement personnel au cœur de notre approche.
                 </p>
@@ -365,47 +435,47 @@
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    Suivez-nous
+                    <span data-key="follow-us">Suivez-nous</span>
                 </a>
             </section>
 
             <section class="info-section">
-                <h3>Horaires & Adresse</h3>
+                <h3 data-key="schedule-address">Horaires & Adresse</h3>
                 <div class="info-grid">
                     <div class="schedule-section">
                         <ul class="schedule">
                             <li>
-                                <span class="day">Lundi</span>
+                                <span class="day" data-key="monday">Lundi</span>
                                 <span class="time">19h — 21h</span>
-                                <span class="group">Tous niveaux</span>
+                                <span class="group" data-key="all-levels">Tous niveaux</span>
                             </li>
                             <li>
-                                <span class="day">Mercredi</span>
+                                <span class="day" data-key="wednesday">Mercredi</span>
                                 <span class="time">19h — 21h</span>
-                                <span class="group">Avancé</span>
+                                <span class="group" data-key="advanced">Avancé</span>
                             </li>
                             <li>
-                                <span class="day">Jeudi</span>
+                                <span class="day" data-key="thursday">Jeudi</span>
                                 <span class="time">19h — 21h</span>
-                                <span class="group">Débutants</span>
+                                <span class="group" data-key="beginners">Débutants</span>
                             </li>
                             <li>
-                                <span class="day">Samedi</span>
+                                <span class="day" data-key="saturday">Samedi</span>
                                 <span class="time">10h — 12h</span>
-                                <span class="group">Enfants (7+ ans)</span>
+                                <span class="group" data-key="children">Enfants (7+ ans)</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="address-section">
-                        <h4>Notre Lieu</h4>
+                        <h4 data-key="our-location">Notre Lieu</h4>
                         <div class="address">
                             17 Route de Balata<br />
                             97200 Fort-de-France<br />
                             Martinique
                         </div>
                         <a href="http://matnik-lumpini.club/" target="_blank" rel="noopener" class="map-link">
-                            Visitez notre site
+                            <span data-key="visit-site">Visitez notre site</span>
                         </a>
                     </div>
                 </div>
@@ -413,11 +483,95 @@
         </main>
 
         <footer>
-            <p>© 2025 <strong style="color: var(--accent);">Matnik Lumpini</strong> — Club de Boxe</p>
+            <p>© 2025 <strong style="color: var(--accent);">Matnik Lumpini</strong> — <span data-key="boxing-club">Club de Boxe</span></p>
             <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="social-link">
                 @matnik_lumpini
             </a>
         </footer>
     </div>
+
+    <script>
+        const translations = {
+            fr: {
+                'subtitle': 'Club de Boxe',
+                'hero-title': 'Tradition • Discipline • Excellence',
+                'hero-description': 'Découvrez l\'art de la boxe dans une ambiance martiniquaise authentique. Formation technique, respect des traditions et développement personnel au cœur de notre approche.',
+                'follow-us': 'Suivez-nous',
+                'schedule-address': 'Horaires & Adresse',
+                'monday': 'Lundi',
+                'wednesday': 'Mercredi',
+                'thursday': 'Jeudi',
+                'saturday': 'Samedi',
+                'all-levels': 'Tous niveaux',
+                'advanced': 'Avancé',
+                'beginners': 'Débutants',
+                'children': 'Enfants (7+ ans)',
+                'our-location': 'Notre Lieu',
+                'visit-site': 'Visitez notre site',
+                'boxing-club': 'Club de Boxe'
+            },
+            gcf: {
+                'subtitle': 'Klib Bòks',
+                'hero-title': 'Tradisyon • Disiplin • Ekselans',
+                'hero-description': 'Dékouvè a latè bòks la nan yon anbyans otantik matinikè. Fòmasyon teknik, respè tradisyon yo ak devlopman pèsonèl yo nan kè démarche nou an.',
+                'follow-us': 'Swiv nou',
+                'schedule-address': 'Lè ak Adrès',
+                'monday': 'Lindi',
+                'wednesday': 'Mèkredi',
+                'thursday': 'Jédi',
+                'saturday': 'Sanmdi',
+                'all-levels': 'Tout nivo',
+                'advanced': 'Avansé',
+                'beginners': 'Kòmansè',
+                'children': 'Ti moun (7+ an)',
+                'our-location': 'Kote nou ye',
+                'visit-site': 'Vizité sit nou an',
+                'boxing-club': 'Klib Bòks'
+            },
+            en: {
+                'subtitle': 'Boxing Club',
+                'hero-title': 'Tradition • Discipline • Excellence',
+                'hero-description': 'Discover the art of boxing in an authentic Martinican atmosphere. Technical training, respect for traditions and personal development at the heart of our approach.',
+                'follow-us': 'Follow us',
+                'schedule-address': 'Schedule & Address',
+                'monday': 'Monday',
+                'wednesday': 'Wednesday',
+                'thursday': 'Thursday',
+                'saturday': 'Saturday',
+                'all-levels': 'All levels',
+                'advanced': 'Advanced',
+                'beginners': 'Beginners',
+                'children': 'Children (7+ years)',
+                'our-location': 'Our Location',
+                'visit-site': 'Visit our website',
+                'boxing-club': 'Boxing Club'
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang === 'gcf' ? 'gcf' : lang;
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'fr';
+            document.getElementById('languageSelect').value = savedLang;
+            if (savedLang !== 'fr') {
+                changeLanguage(savedLang);
+            }
+        });
+    </script>
 </body>
 </html>
