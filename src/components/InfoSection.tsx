@@ -36,7 +36,7 @@ const InfoSection = () => {
             97200 Fort-de-France<br />
             Martinique
           </div>
-          <a href="http://matnik-lumpini.club/" target="_blank" rel="noopener" className="map-link">
+          <a href="https://maps.google.com/?q=17+Route+de+Balata,+97200+Fort-de-France,+Martinique" target="_blank" rel="noopener" className="map-link">
             <span>{t('visit-site')}</span>
           </a>
         </div>
