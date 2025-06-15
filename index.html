@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matnik Lumpini - Club de Muay Thaï – Martinique</title>
     <meta name="description" content="Découvrez l'art du Muay Thai à Matnik Lumpini : tradition, énergie, respect et puissance à Fort-de-France, Martinique.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap">
     <meta property="og:title" content="Matnik Lumpini Muay Thaï" />
     <meta property="og:description" content="Club de Muay Thaï – Martinique. Tradition, énergie, respect et puissance." />
     <meta property="og:type" content="website" />
@@ -15,25 +16,22 @@
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <style>
       :root {
-        --background: #18181b; /* Dark background */
-        --foreground: #f8fafc; /* Light text */
-        --green-dark: #facc15; /* Primary Yellow */
-        --green-accent: #eab308; /* Hover Yellow */
-        --green-light: #3f3f46;
-        --card-bg: #27272a; /* Dark card background */
-        --border-color: rgba(250, 204, 21, 0.2); /* Yellowish border */
-        --shadow-color: rgba(250, 204, 21, 0.1); /* Yellowish shadow */
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #111111;
+        --bg-card: #1a1a1a;
+        --accent-yellow: #f59e0b;
+        --accent-gold: #d97706;
+        --text-primary: #ffffff;
+        --text-secondary: #a1a1aa;
+        --text-muted: #71717a;
+        --border: #262626;
+        --shadow: rgba(245, 158, 11, 0.1);
       }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       html {
@@ -41,307 +39,549 @@
       }
 
       body {
-        background-color: var(--background);
-        color: var(--foreground);
-        font-family: 'Inter', Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
         line-height: 1.6;
-        text-align: center;
+        overflow-x: hidden;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
       }
 
-      header {
-        padding: 40px 0 10px;
-        animation: fadeInUp 0.5s ease-out forwards;
-        opacity: 0;
+      /* Header */
+      .header {
+        position: relative;
+        padding: 80px 0 120px;
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 80px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
       }
 
       .logo {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        border: 2px solid var(--accent-yellow);
+        background: var(--bg-card);
         object-fit: contain;
-        margin: 0 auto 10px;
-        background: var(--card-bg);
-        border-radius: 50%;
-        border: 2px solid var(--green-dark);
-        box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+        padding: 8px;
       }
 
-      h1 {
+      .brand-text {
         font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--green-dark);
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin: 0;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-yellow);
         text-transform: uppercase;
         letter-spacing: 1px;
-        opacity: 0.9;
-        margin-bottom: 20px;
       }
 
-      main {
-        padding: 20px 0;
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
       }
 
-      .hero {
-        animation: fadeInUp 0.5s 0.2s ease-out forwards;
-        opacity: 0;
-      }
-
-      .hero h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        font-weight: 700;
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
         text-transform: uppercase;
-        color: var(--green-dark);
-        line-height: 1.3;
-        margin-bottom: 8px;
+        letter-spacing: 0.5px;
       }
 
-      .hero h2 span {
-        color: var(--green-accent);
+      .nav-link:hover {
+        color: var(--accent-yellow);
       }
 
-      .section-bar {
-        width: 64px;
-        height: 5px;
-        border-radius: 3px;
-        background-color: var(--green-dark);
-        margin: 15px auto;
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        position: relative;
+        z-index: 5;
       }
 
-      .hero p {
-        max-width: 600px;
-        margin: 0 auto 30px;
-        font-size: 1.1rem;
-        opacity: 0.85;
-      }
-
-      .button-cta {
+      .hero-badge {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding: 12px 28px;
+        gap: 8px;
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.2);
+        padding: 8px 16px;
         border-radius: 50px;
-        font-weight: bold;
-        font-size: 1rem;
-        background-color: var(--green-dark);
-        color: black;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--accent-yellow);
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .hero-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        color: var(--text-primary);
+        line-height: 1.1;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+      }
+
+      .hero-title .accent {
+        color: var(--accent-yellow);
+        display: block;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--accent-yellow);
+        color: var(--bg-primary);
+        padding: 16px 32px;
+        border-radius: 50px;
         text-decoration: none;
-        transition: all 0.2s ease-in-out;
-        border: none;
-        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
 
-      .button-cta:hover {
-        background-color: var(--green-accent);
-        transform: scale(1.05);
-        box-shadow: 0 4px 20px rgba(250, 204, 21, 0.4);
+      .cta-button:hover {
+        background: var(--accent-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(245, 158, 11, 0.3);
       }
 
-      .club-info {
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
+      /* Main Content */
+      .main-content {
+        padding: 120px 0;
+        background: var(--bg-secondary);
+        position: relative;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+      }
+
+      .section-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 48px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .section-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+
+      .section-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-yellow), var(--accent-gold));
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(245, 158, 11, 0.1);
         border-radius: 12px;
-        padding: 30px;
-        margin: 50px auto;
-        max-width: 800px;
-        box-shadow: 0 4px 32px 0 var(--shadow-color);
-        text-align: left;
-        animation: fadeInUp 0.5s 0.4s ease-out forwards;
-        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-yellow);
       }
 
-      .club-info-content {
+      .card-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .schedule-list {
+        list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
       }
 
-      .club-info h3 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--green-dark);
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 30px;
-      }
-
-      .schedule {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .schedule li {
-        margin-bottom: 15px;
+      .schedule-item {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        gap: 10px;
+        align-items: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
       }
-      
-      .schedule .day {
+
+      .schedule-item:hover {
+        background: rgba(245, 158, 11, 0.05);
+        border-color: rgba(245, 158, 11, 0.2);
+      }
+
+      .schedule-day {
         font-weight: 600;
-      }
-      
-      .schedule .time {
-        font-weight: bold;
-        color: var(--green-dark);
-      }
-      
-      .schedule .group {
-        font-style: italic;
-        opacity: 0.8;
-      }
-      
-      .address {
+        color: var(--text-primary);
         font-size: 1rem;
-        line-height: 1.7;
-      }
-      
-      .address a {
-        display: inline-block;
-        margin-top: 15px;
-        color: var(--green-dark);
-        text-decoration: underline;
-        transition: color 0.2s;
       }
 
-      .address a:hover {
-        color: var(--green-accent);
+      .schedule-time {
+        font-weight: 700;
+        color: var(--accent-yellow);
+        font-size: 1.1rem;
       }
 
-      footer {
-        padding: 30px 0;
+      .schedule-group {
         font-size: 0.9rem;
-        color: var(--foreground);
-        opacity: 0.7;
-        animation: fadeInUp 0.5s 0.6s ease-out forwards;
+        color: var(--text-secondary);
+        font-style: italic;
+      }
+
+      .address-content {
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      .address-content strong {
+        color: var(--text-primary);
+        display: block;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-yellow);
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 20px;
+        transition: color 0.3s ease;
+      }
+
+      .map-link:hover {
+        color: var(--accent-gold);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--bg-primary);
+        padding: 60px 0;
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.2);
+        padding: 12px 24px;
+        border-radius: 50px;
+        color: var(--accent-yellow);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+      }
+
+      .social-link:hover {
+        background: rgba(245, 158, 11, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .copyright {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .animate-delay-1 { animation-delay: 0.2s; }
+      .animate-delay-2 { animation-delay: 0.4s; }
+      .animate-delay-3 { animation-delay: 0.6s; }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .section-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+
+        .header {
+          padding: 40px 0 80px;
+        }
+
+        .nav {
+          margin-bottom: 60px;
+        }
+
+        .section-card {
+          padding: 32px 24px;
+        }
+
+        .main-content {
+          padding: 80px 0;
+        }
+
+        .schedule-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+      }
+
+      /* Initial state for animations */
+      .header, .hero, .section-card, .footer {
         opacity: 0;
       }
-      
-      footer .social-link {
-        font-weight: 600;
-        color: var(--green-dark);
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-      
-      footer .social-link:hover {
-        color: var(--green-accent);
-        text-decoration: underline;
-      }
-      
-      @media (min-width: 768px) {
-        h1 {
-          font-size: 3.5rem;
-        }
-        .hero h2 {
-          font-size: 2.8rem;
-        }
-
-        .club-info {
-          padding: 40px;
-        }
-
-        .club-info-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 40px;
-        }
-
-        .club-info-content > * {
-            flex: 1;
-        }
-
-        .schedule li {
-          display: flex;
-          justify-content: space-between;
-          gap: 20px;
-          flex-wrap: nowrap;
-        }
-      }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="/img/logo.png" alt="Matnik Lumpini Tiger Logo" class="logo" />
-            <h1>Matnik Lumpini</h1>
-            <p>Club de Muay Thaï – Martinique</p>
-        </header>
+    <header class="header animate-fade-in">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo-container">
+                    <img src="/img/logo.png" alt="Matnik Lumpini Logo" class="logo" />
+                    <div class="brand-text">Matnik Lumpini</div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#horaires" class="nav-link">Horaires</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
 
-        <main>
-            <section class="hero">
-                <h2>
-                    ENTÎMN RÉZISTANS <br />
-                    <span>PUISSANCE TRADITION</span>
-                </h2>
-                <div class="section-bar"></div>
-                <p>
-                    Découvrez l'art du Muay Thai dans une ambiance martiniquaise conviviale et exigeante.
+            <div class="hero animate-fade-in animate-delay-1">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Club de Muay Thaï - Martinique
+                </div>
+                
+                <h1 class="hero-title">
+                    Entîmn Rézistans
+                    <span class="accent">Puissance Tradition</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Découvrez l'art du Muay Thai dans une ambiance martiniquaise conviviale et exigeante. 
                     Encadrement passionné, respect des traditions, esprit de famille et performance.
                 </p>
-                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="button-cta">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                  Suivez-nous sur Instagram
+                
+                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="cta-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Suivez-nous
                 </a>
-            </section>
+            </div>
+        </div>
+    </header>
 
-            <section class="club-info">
-                <h3>Horaires & Lieu</h3>
-                <div class="club-info-content">
-                  <ul class="schedule">
-                      <li>
-                          <span class="day">Lundi &amp; Jeudi :</span>
-                          <span class="time">19h — 21h</span>
-                          <span class="group">Adultes &amp; Ados</span>
-                      </li>
-                      <li>
-                          <span class="day">Samedi :</span>
-                          <span class="time">10h — 12h</span>
-                          <span class="group">Enfants (à partir de 7 ans)</span>
-                      </li>
-                  </ul>
-                  <div class="address">
-                      <strong>Adresse :</strong><br />
-                      17 route de Balata,<br />
-                      97200 Fort-de-France, Martinique<br />
-                      <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener">
-                          Voir sur Google Maps
-                      </a>
-                  </div>
+    <main class="main-content">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-card animate-fade-in animate-delay-2" id="horaires">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h2 class="card-title">Horaires</h2>
+                    </div>
+                    
+                    <ul class="schedule-list">
+                        <li class="schedule-item">
+                            <span class="schedule-day">Lundi & Jeudi</span>
+                            <span class="schedule-time">19h — 21h</span>
+                            <span class="schedule-group">Adultes & Ados</span>
+                        </li>
+                        <li class="schedule-item">
+                            <span class="schedule-day">Samedi</span>
+                            <span class="schedule-time">10h — 12h</span>
+                            <span class="schedule-group">Enfants (7 ans+)</span>
+                        </li>
+                    </ul>
                 </div>
-            </section>
-        </main>
 
-        <footer>
-            © 2025 <strong style="color: var(--green-dark);">Matnik Lumpini</strong> — Tous droits réservés
-            <br>
-            <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="social-link">
-                @matnik_lumpini
-            </a>
-        </footer>
-    </div>
+                <div class="section-card animate-fade-in animate-delay-3" id="contact">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h2 class="card-title">Adresse</h2>
+                    </div>
+                    
+                    <div class="address-content">
+                        <strong>Notre dojo vous attend :</strong>
+                        17 route de Balata<br />
+                        97200 Fort-de-France<br />
+                        Martinique
+                        
+                        <a href="https://goo.gl/maps/YFVXpSv9jnmvP3Bc9" target="_blank" rel="noopener" class="map-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Voir sur Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer animate-fade-in animate-delay-3">
+        <div class="container">
+            <div class="footer-content">
+                <a href="https://www.instagram.com/matnik_lumpini/" target="_blank" rel="noopener" class="social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    @matnik_lumpini
+                </a>
+                
+                <p class="copyright">
+                    © 2025 <strong style="color: var(--accent-yellow);">Matnik Lumpini</strong> — Tous droits réservés
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-      // This page is intentionally simple and does not require JavaScript.
+        // Trigger animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(el => {
+                el.style.opacity = '1';
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
